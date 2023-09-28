@@ -15,7 +15,7 @@ inicio:
 	div ab     ;divide a por b
 	mov R1,a   ;r1 recebe o valor de a
 	mov R2,b   ;r2 recebe o valor de b
-	jmp inicio
+	jmp inicio ;volta ao inicio
 ;Resposta da questao: o ultimo bit do PSW´eh
 ;o bit da partidade. Quando ACC recebe 4, o
 ;ultimo bit recebe 1, pois o valor eh par.

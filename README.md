@@ -86,5 +86,5 @@ inicio:
 	mov R2,b   ;r2 recebe o valor de b
 	jmp inicio ;volta ao inicio
 ```
-1) O ultimo bit do PSW é o bit de paridade. Quando ACC recebe 4, o ultimo bit recebe 1,pois o valor recebido é par.No entanto, quando ACC recebe 3, o valor do ultimo bit eh 0, pois esse valor é impar.
+* O ultimo bit do PSW é o bit de paridade. Quando ACC recebe 4, o ultimo bit recebe 1,pois o valor recebido é par.No entanto, quando ACC recebe 3, o valor do ultimo bit eh 0, pois esse valor é impar.
 

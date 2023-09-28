@@ -1,6 +1,6 @@
-	org 00h ;setando origem do programa no endereÁo ooh
+	org 00h ;setando origem do programa no endere√ßo ooh
 	jmp main ;saltando para o label do programa principal
-	org 33h ;recolocando a origem do programa no endereÁo 33h
+	org 33h ;recolocando a origem do programa no endere√ßo 33h
 
 main:
 	clr A ;seta todos os bits do registrador ACC com zeros 
@@ -10,10 +10,10 @@ main:
 block1:
 	jz block2 ;salta para o label "block2" se o acumulador == 0
 	jnz block3 ;salta para o label "block3" se o acumulador != 0
-	nop ;1 nop = 12 ciclos de m·quina = 1 uS
+	nop ;1 nop = 12 ciclos de m√°quina = 1 uS
 
 block2: 
-	mov ACC, R0	;movendo o conte˙do de R0 para ACC
+	mov ACC, R0	;movendo o conte√∫do de R0 para ACC
 	jmp block1 ;retorna para o label do primeiro bloco
 
 block3:
@@ -22,9 +22,9 @@ block3:
 
 	end
 
-;descriÁ„o do comportamento do cÛdigo:
+;descri√ß√£o do comportamento do c√≥digo:
 ;
-;main: limpa o ACC e move um valor arbitr·rio para R0
-;block1: redireciona o fluxo do cÛdigo entre o bloco 2 ou 3
+;main: limpa o ACC e move um valor arbitr√°rio para R0
+;block1: redireciona o fluxo do c√≥digo entre o bloco 2 ou 3
 ;block2: move o valor de R0 para ACC e retorna para o bloco 1
-;block3: realiza um loop onde R0 È decrementado atÈ zero e depois retorna ao bloco principal
+;block3: realiza um loop onde R0 √© decrementado at√© zero e depois retorna ao bloco principal

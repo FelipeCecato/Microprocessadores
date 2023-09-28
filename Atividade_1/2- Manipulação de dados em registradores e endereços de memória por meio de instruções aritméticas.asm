@@ -16,7 +16,7 @@ inicio:
 	mov R1,a   ;r1 recebe o valor de a
 	mov R2,b   ;r2 recebe o valor de b
 	jmp inicio ;volta ao inicio
-;Resposta da questao: o ultimo bit do PSW´eh
-;o bit da partidade. Quando ACC recebe 4, o
+;Resposta da questao: o ultimo bit do PSW eh
+;o bit de paridade. Quando ACC recebe 4, o
 ;ultimo bit recebe 1, pois o valor eh par.
-;Quando ACC recebe 3, o valor do ultimo bit eh 0
+;Quando ACC recebe 3, o valor do ultimo bit eh 0.

@@ -134,10 +134,11 @@ block3:
 
 	end
 
-;descrição do comportamento do código:
-;
-;main: limpa o ACC e move um valor arbitrário para R0
-;block1: redireciona o fluxo do código entre o bloco 2 ou 3
-;block2: move o valor de R0 para ACC e retorna para o bloco 1
-;block3: realiza um loop onde R0 é decrementado até zero e depois retorna ao bloco principal
 ```
+
+Funcionamento do código:
+
+* "main": preenche todas as posições do registrdor ACC com zeros e, em seguida, move um valor arbitrário - definido como sendo 3fh - para o registrador R0.
+* "block1": realiza comparações do valor contido em ACC e com base nelas redireciona o fluxo do código para um dentre os blocos de código definidos pelos labels "block2" e "block3".
+* "block2": move o valor de R0 para ACC e retorna para o trecho de código designado pelo label "block1".
+* "block3": consiste em um loop onde R0 é decrementado até zero e depois retorna ao label "main".

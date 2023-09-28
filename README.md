@@ -64,8 +64,8 @@ DP0H, DP1L, DP1H. O valor máximo em hexadecimal que se pode guardar em DPTR é 
 
 =======
 
-##Exercicio 2
-
+## Exercicio 2
+```
 org 00h
 
 inicio:
@@ -85,10 +85,6 @@ inicio:
 	mov R1,a   ;r1 recebe o valor de a
 	mov R2,b   ;r2 recebe o valor de b
 	jmp inicio ;volta ao inicio
-
-;1) O ultimo bit do PSW eh o bit de paridade;
-;Quando ACC recebe 4, o ultimo bit recebe 1,
-;pois o valor eh par.Quando ACC recebe 3, o
-;valor do ultimo bit eh 0, pois o valor eh 
-;impar.
+```
+1) O ultimo bit do PSW é o bit de paridade. Quando ACC recebe 4, o ultimo bit recebe 1,pois o valor recebido é par.No entanto, quando ACC recebe 3, o valor do ultimo bit eh 0, pois esse valor é impar.
 

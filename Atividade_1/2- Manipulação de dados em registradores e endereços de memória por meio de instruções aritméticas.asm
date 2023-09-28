@@ -1,4 +1,5 @@
 org 00h
+
 inicio:
 	mov ACC,#2 ;insere o valor dois ao acc
 	mov B,#3   ;insere o valor 3 no b
@@ -16,7 +17,9 @@ inicio:
 	mov R1,a   ;r1 recebe o valor de a
 	mov R2,b   ;r2 recebe o valor de b
 	jmp inicio ;volta ao inicio
-;Resposta da questao: o ultimo bit do PSW eh
-;o bit de paridade. Quando ACC recebe 4, o
-;ultimo bit recebe 1, pois o valor eh par.
-;Quando ACC recebe 3, o valor do ultimo bit eh 0.
+
+;1) O ultimo bit do PSW eh o bit de paridade;
+;Quando ACC recebe 4, o ultimo bit recebe 1,
+;pois o valor eh par.Quando ACC recebe 3, o
+;valor do ultimo bit eh 0, pois o valor eh 
+;impar.

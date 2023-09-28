@@ -64,7 +64,7 @@ DP0H, DP1L, DP1H. O valor máximo em hexadecimal que se pode guardar em DPTR é 
 
 =======
 
-## Exercicio 2
+## Exercício 2
 ```
 org 00h
 
@@ -88,3 +88,56 @@ inicio:
 ```
 * O ultimo bit do PSW é o bit de paridade. Quando ACC recebe 4, o ultimo bit recebe 1,pois o valor recebido é par.No entanto, quando ACC recebe 3, o valor do ultimo bit eh 0, pois esse valor é impar.
 
+## Exercício 3
+```
+	org 00h ;definindo o endereço de origem como 00h
+
+inicio: 
+	mov ACC, #10110010b ;movendo o valor binário de forma imediata para ACC
+	mov B, #00110101b ;movendo o valor binário de forma imediata para B
+	anl A, B ;AND lógico entre ACC e B
+	rr A ;rotacionando ACC à direita uma vez
+	rr A  ;rotacionando ACC à direita pela segunda vez
+	cpl A ;complemento de ACC
+	rl A ;rotacionando ACC à esquerda uma vez
+	rl A ;rotacionando ACC à esquerda pela segunda vez
+	orl A, B ;OR lógico entre ACC e B
+	xrl A, B ;XOR entre ACC e B
+	swap A ;realizando o SWAP de A
+	jmp inicio ;salto incondicional para o label de inicio
+
+	end
+```
+## Exercício 4
+```
+	org 00h ;setando origem do programa no endereço ooh
+	jmp main ;saltando para o label do programa principal
+	org 33h ;recolocando a origem do programa no endereço 33h
+
+main:
+	clr A ;seta todos os bits do registrador ACC com zeros 
+	mov PSW, #00h ;selecionando o banco 00
+	mov R0, #3fh ;movendo de forma imediata um valor qualquer para R0
+
+block1:
+	jz block2 ;salta para o label "block2" se o acumulador == 0
+	jnz block3 ;salta para o label "block3" se o acumulador != 0
+	nop ;1 nop = 12 ciclos de máquina = 1 uS
+
+block2: 
+	mov ACC, R0	;movendo o conteúdo de R0 para ACC
+	jmp block1 ;retorna para o label do primeiro bloco
+
+block3:
+	djnz R0, block3 ;se R0 != 0 pular para block3
+	jmp main  ;retorna para o label do programa principal
+
+	end
+
+;descrição do comportamento do código:
+;
+;main: limpa o ACC e move um valor arbitrário para R0
+;block1: redireciona o fluxo do código entre o bloco 2 ou 3
+;block2: move o valor de R0 para ACC e retorna para o bloco 1
+;block3: realiza um loop onde R0 é decrementado até zero e depois retorna ao bloco principal
+```
